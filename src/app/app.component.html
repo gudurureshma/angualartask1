@@ -1,0 +1,37 @@
+<div class="todos">
+  <div class="container">
+    <form (submit)="addTodo($event)">
+      <div class="col-md-7">
+        
+  <input type="text" class="form-control"    [(ngModel)]="newTodo" name="newTodo" >
+  </div>
+ <div class="col-md-5">
+  <button type="submit"[disabled]="newTodo===''" class="btn btn-warning" >Add Todo</button>
+</div>
+  </form>
+
+  <div [hidden]="newTodo">
+        Type in a new todo...
+      </div>
+      <div class="colour" [hidden]="!newTodo">
+       
+        Typing: {{ newTodo }}
+      </div>
+
+   <ul class="scan">
+      <li *ngFor="let todo of todos; let i=index">
+             <!-- <span> {{todo.newTodo}} </span>   -->
+            <input type="checkbox"  [(ngModel)]="todo.completed" />
+           <span [ngClass]="{'checked': todo.completed}" class="fonts" >{{ todo.newTodo }} </span>         
+           <button type="button" class="btn btn-info" (click)="deleteTodo(i)">delete todo</button> 
+      </li>
+   </ul>
+</div>
+   <div>
+      <button type="button" class="btn btn-warning" (click)="deleteSelectedTodos()">Delete Selected</button>
+   </div>
+
+   <!-- <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
+<input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
+<br>
+<span class="base-class" ng-class="myVar">Sample Text</span> -->

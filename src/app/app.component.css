@@ -1,0 +1,25 @@
+.colour{
+color:green;
+font-size:30px;
+}
+.scan  {
+list-style-type: none;
+/* color:orange; */
+
+}
+.scan .checked {
+    text-decoration: line-through;
+  }
+.fonts{
+    font-size: 30px;
+
+}
+/* .base-class {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.base-class.my-class {
+  color: red;
+  font-size:3em;
+} */
+
